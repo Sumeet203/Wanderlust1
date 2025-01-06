@@ -71,7 +71,7 @@ body {
 }
 /* card effect */
 .card-img-overlay {
-  opacity: 0;
+  opacity: 0;transition: 0.1s all ;
 }
 .card-img-overlay:hover {
   opacity: 0.2;
@@ -101,4 +101,78 @@ body {
 .show-card{
    padding-left : 0;
    padding-right: 0;
+}
+
+/* filters */
+.filters{
+  display : flex;
+  justify-content: space-between;
+}
+.left-filter{
+  display : flex;
+  width : 75%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  transition: all 0.2s;
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+.left-filter::-webkit-scrollbar{
+  display: none;
+}
+.left-filter .active{
+  background: rgba(255, 255, 255, 0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+.right-filter{
+  display : flex;
+  justify-content: center;
+}
+.filter,
+.tax-toggle{
+  margin : 1rem 0 1rem 0;
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding : 5px 1rem;
+  border-radius : 0.8rem;
+}
+
+.filter{
+  opacity : 0.8;
+  transition: 0.3s;
+}
+
+
+.filter:hover{
+  opacity : 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.filter .text{
+  font-size : 1ch;
+  text-wrap: nowrap;
+}
+.tax-toggle{
+  width : 15rem;
+  padding : 5px 0rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width : 993px){
+  .tax-toggle{
+    display : none;
+  }
+  .left-filter{
+    width : 100%;
+  }
+}
+/* .tax-info{
+  visibility: hidden;
+} */
+.last{
+  justify-self: end;
 }
